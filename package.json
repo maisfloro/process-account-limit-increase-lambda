@@ -4,7 +4,8 @@
   "description": "lambda function that process tecnocom file in order to update user's account limits",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/eslint/bin/eslint.js index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,10 @@
     "url": "https://github.com/bcilabs/process-account-limit-increase-lambda/issues"
   },
   "homepage": "https://github.com/bcilabs/process-account-limit-increase-lambda#readme",
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.630.0",
+    "csv-parser": "^2.3.2"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
