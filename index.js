@@ -57,10 +57,12 @@ const processCsv = async (bucket, key) => new Promise((resolve, reject) => {
       csvList.push(data);
     })
     .on('end', async () => {
+      console.log(`Preparing to publish ${csvList.length} events`);
       await publishMessage(csvList, topics.accountLimitIncreaseProcessed, key);
       resolve(csvList);
     })
     .on('error', (error) => {
+      console.log(error);
       reject(error);
     });
 });
